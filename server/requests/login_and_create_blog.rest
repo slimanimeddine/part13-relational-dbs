@@ -1,0 +1,29 @@
+@URL=http://localhost
+@PORT=3003
+@baseUrl={{URL}}:{{PORT}}
+
+
+# @name login
+POST {{baseUrl}}/api/login
+Content-Type: application/json
+
+{ 
+    "username": "fastify",
+    "password": "flaskflasky"
+}
+
+
+
+#########################
+@authToken = {{login.response.body.token}}
+
+POST {{baseUrl}}/api/blogs
+Content-Type: application/json
+Authorization: bearer {{authToken}}
+
+{ 
+    "title": "One dance",
+    "author": "drizzy drake",
+    "likes": 6,
+    "url": "www.ovo.com"
+}

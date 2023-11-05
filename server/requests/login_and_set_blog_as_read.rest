@@ -1,0 +1,27 @@
+
+@URL=http://localhost
+@PORT=3003
+@baseUrl={{URL}}:{{PORT}}
+
+
+# @name login
+POST {{baseUrl}}/api/login
+Content-Type: application/json
+
+{ 
+    "username": "",
+    "password": ""
+}
+
+
+#########################
+
+@id=4
+
+@authToken={{login.response.body.token}}
+
+
+PUT http://localhost:3003/api/readinglists/{{id}}
+Content-Type: application/json
+Authorization: bearer {{authToken}}
+

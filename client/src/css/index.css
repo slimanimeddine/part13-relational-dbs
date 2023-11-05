@@ -1,0 +1,27 @@
+.notification_green {
+  color: green;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.error_red {
+  color: red;
+  background: lightgrey;
+  font-size: 20px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.deletebtn {
+    margin-left: 5px;
+    border-radius: 4px;
+    border: solid 1px black;
+   ;
+}
+

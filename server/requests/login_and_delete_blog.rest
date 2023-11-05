@@ -1,0 +1,26 @@
+@URL=http://localhost
+@PORT=3003
+@baseUrl={{URL}}:{{PORT}}
+
+
+# @name login
+POST {{baseUrl}}/api/login
+Content-Type: application/json
+
+{ 
+    "username": "hellohalo",
+    "password": "wordpass"
+}
+
+
+
+#########################
+
+@deleting_blog_ID=18
+
+
+@authToken={{login.response.body.token}}
+
+DELETE {{baseUrl}}/api/blogs/{{deleting_blog_ID}}
+Content-Type: application/json
+Authorization: bearer {{authToken}}
